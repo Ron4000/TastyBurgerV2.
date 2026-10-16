@@ -3,15 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <title>Harold's BURGER</title>
     <meta
       name="description"
-      content="Harold's Burger — bold handcrafted burgers, loaded with flavor and made fresh daily."
+      content="Harold's Burger Joint serves stacked, flame-grilled burgers made for the good times."
     />
+    <title>Harold's Burger Joint — Burgers with a little extra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./main.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <header class="site-header">
+      <nav class="navbar page-shell" aria-label="Main navigation">
+        <button class="brand" type="button" data-action="open-promo" aria-label="Harold's Burger Joint — see today's promo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M7 17.5c0-7.3 5.8-12 13-12s13 4.7 13 12H7Z" fill="currentColor" />
+              <path d="M7 21h26v3H7zm1 6h24v3H8zm2 6h20" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              <circle cx="15" cy="11" r="1" />
+              <circle cx="22" cy="9" r="1" />
+              <circle cx="27" cy="13" r="1" />
+            </svg>
+          </span>
+          <span class="brand-name">Harold's <span>BURGER JOINT</span></span>
+        </button>
+
+        <a class="nav-link" href="#menu">The menu</a>
+
+        <form class="search-form" role="search" aria-label="Search burgers">
+          <label class="visually-hidden" for="burger-search">Search burgers</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 4.4 4.4"></path>
+          </svg>
+          <input id="burger-search" name="q" type="search" placeholder="Find your favorite..." autocomplete="off" />
+          <button class="search-clear" type="button" data-action="clear-search" aria-label="Clear search" hidden>×</button>
+        </form>
+
+        <button class="cart-trigger" type="button" data-action="open-cart" aria-label="Open shopping cart, 0 items">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4L22 8H6"></path>
+            <circle cx="10" cy="20" r="1.2"></circle>
+            <circle cx="18" cy="20" r="1.2"></circle>
+          </svg>
+          <span class="cart-label">Cart</span>
+          <span class="cart-badge" aria-live="polite">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero page-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> GOOD FOOD. GOOD MOOD.</p>
+          <h1 id="hero-title">Burgers with<br />a little <span>extra.</span></h1>
+          <p class="hero-description">Big, juicy, unapologetically messy. Made fresh, stacked high, and always worth the napkins.</p>
+          <a class="button button-primary hero-cta" href="#menu">
+            Get into the good stuff
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+          </a>
+          <div class="hero-proof">
+            <div class="proof-avatars" aria-hidden="true"><span>J</span><span>M</span><span>K</span></div>
+            <p><strong>4.9/5</strong><span>Loved by burger people</span></p>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-sunburst" aria-hidden="true"></div>
+          <div class="hero-sticker" aria-hidden="true"><span>100%</span><small>GOOD<br />STUFF</small></div>
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85"
+            alt="Juicy double cheeseburger with fresh lettuce and tomato"
+            fetchpriority="high"
+          />
+          <div class="hero-caption"><span>MADE FRESH, NEVER BORING</span><span>★ 4.9</span></div>
+        </div>
+        <span class="hero-scribble hero-scribble-one" aria-hidden="true">✳</span>
+        <span class="hero-scribble hero-scribble-two" aria-hidden="true">✦</span>
+      </section>
+
+      <div class="ticker" aria-label="Fresh off the grill, straight to your hands">
+        <div class="ticker-track" aria-hidden="true">
+          <span>FRESH OFF THE GRILL</span><b>✳</b><span>STRAIGHT TO YOUR HANDS</span><b>✳</b>
+          <span>GOOD FOOD. GOOD MOOD.</span><b>✳</b><span>FRESH OFF THE GRILL</span><b>✳</b>
+          <span>STRAIGHT TO YOUR HANDS</span><b>✳</b><span>GOOD FOOD. GOOD MOOD.</span><b>✳</b>
+        </div>
+      </div>
+
+      <section class="menu-section page-shell" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> THE LINEUP</p>
+            <h2 id="menu-title">Pick your <span>happiness.</span></h2>
+          </div>
+          <p class="section-note">Handmade with love.<br />And a little extra sauce.</p>
+        </div>
+
+        <div class="menu-tools">
+          <div class="category-list" role="group" aria-label="Filter burgers by category">
+            <button class="category-button is-active" type="button" data-category="All" aria-pressed="true">All <span>15</span></button>
+            <button class="category-button" type="button" data-category="Chicken" aria-pressed="false">Chicken</button>
+            <button class="category-button" type="button" data-category="Beef" aria-pressed="false">Beef</button>
+            <button class="category-button" type="button" data-category="Bacon" aria-pressed="false">Bacon</button>
+            <button class="category-button" type="button" data-category="Vegan" aria-pressed="false">Vegan</button>
+            <button class="category-button" type="button" data-category="Specials" aria-pressed="false">Specials <span>HOT</span></button>
+          </div>
+          <p class="result-count" aria-live="polite"></p>
+        </div>
+
+        <div class="menu-grid" id="menu-grid" aria-live="polite" aria-busy="false"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">🍔</span>
+          <h3>No burgers found</h3>
+          <p>Nothing on the grill matches that search. Try another name or category.</p>
+          <button class="button button-secondary" type="button" data-action="reset-filters">See all burgers</button>
+        </div>
+      </section>
+
+      <aside class="fresh-note page-shell" aria-label="Our promise">
+        <div class="fresh-note-icon" aria-hidden="true">✳</div>
+        <div><p class="eyebrow">A LITTLE NOTE FROM HAROLD</p><h2>Real ingredients. <span>Real good.</span></h2></div>
+        <p>Every patty hits the grill when you order. Because good things are worth the wait (and the extra napkin).</p>
+        <span class="fresh-note-doodle" aria-hidden="true">yum!</span>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main page-shell">
+        <div class="footer-brand">
+          <span class="brand-name">Harold's <span>BURGER JOINT</span></span>
+          <p>For the love of the<br />perfect burger.</p>
+        </div>
+        <div class="footer-column"><h2>Come hungry</h2><p>Sampaloc<br />Sorsogon, Philippines</p></div>
+        <div class="footer-column"><h2>Grill hours</h2><p>Mon–Thu · 11am–10pm<br />Fri–Sun · 11am–midnight</p></div>
+        <a class="back-top" href="#top" aria-label="Back to top">↑</a>
+      </div>
+      <div class="footer-bottom page-shell"><span>© 2025 Harold's Burger Joint</span><span>Made with <b>♥</b> and extra sauce.</span></div>
+    </footer>
+
+    <div class="drawer-layer" id="drawer-layer" hidden>
+      <button class="drawer-backdrop" type="button" data-action="close-cart" aria-label="Close shopping cart"></button>
+      <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" tabindex="-1">
+        <div class="drawer-header">
+          <div><p class="eyebrow">GOOD CHOICE</p><h2 id="cart-title">Your cart <span class="drawer-count"></span></h2></div>
+          <button class="icon-button drawer-close" type="button" data-action="close-cart" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-empty" id="cart-empty" hidden>
+          <span aria-hidden="true">🛒</span><h3>It's a little empty in here.</h3><p>Let's fix that with a burger.</p>
+          <button class="button button-secondary" type="button" data-action="close-cart">Back to the menu</button>
+        </div>
+        <div class="cart-summary">
+          <div class="cart-subtotal"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div>
+          <p>Taxes and delivery calculated at checkout.</p>
+          <button class="button button-primary checkout-button" type="button" data-action="checkout" disabled>Checkout <span aria-hidden="true">→</span></button>
+        </div>
+      </aside>
+    </div>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title">
+      <button class="icon-button dialog-close" type="button" data-action="close-product" aria-label="Close product details">×</button>
+      <div class="product-dialog-content" id="product-dialog-content"></div>
+    </dialog>
+
+    <dialog class="promo-dialog" id="promo-dialog" aria-labelledby="promo-title">
+      <button class="icon-button dialog-close" type="button" data-action="close-promo" aria-label="Close promotion">×</button>
+      <div class="promo-art" aria-hidden="true">🍟</div>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE SOMETHING FOR YOU</p>
+      <h2 id="promo-title">Free fries.<br /><span>Extra nice.</span></h2>
+      <p class="promo-description">Order any 2 burgers and fries are on us. Because great burgers deserve great company.</p>
+      <div class="promo-code"><span>YOUR SECRET CODE</span><strong>FRYDAY</strong></div>
+      <button class="button button-primary promo-cta" type="button" data-action="shop-promo">Sounds delicious</button>
+    </dialog>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
