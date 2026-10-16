@@ -164,28 +164,19 @@ img {
 }
 
 .brand-mark {
-  display: grid;
+  display: block;
   width: 42px;
   height: 42px;
-  place-items: center;
+  padding: 4px;
   border-radius: var(--radius-sm);
   background: var(--red);
-  color: var(--cream);
+  object-fit: contain;
   transform: rotate(-5deg);
   transition: transform var(--transition-base);
 }
 
 .brand:hover .brand-mark {
   transform: rotate(5deg) scale(1.06);
-}
-
-.brand-mark svg {
-  width: 31px;
-  height: 31px;
-}
-
-.brand-mark svg circle {
-  fill: var(--ink);
 }
 
 .brand-name {
@@ -1046,6 +1037,12 @@ img {
   padding-block: var(--space-12);
 }
 
+.footer-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .footer-brand .brand-name {
   width: max-content;
   font-size: 1.7rem;
@@ -1621,10 +1618,6 @@ img {
   .brand-mark {
     width: 37px;
     height: 37px;
-  }
-
-  .brand-mark svg {
-    width: 27px;
   }
 
   .brand-name {
